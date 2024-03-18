@@ -1,4 +1,12 @@
 .moviesContainer {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 .movieItem {
 }
