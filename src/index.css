@@ -3,12 +3,16 @@
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  color: #383737;
-  background-color: rgba(255, 255, 255, 0.87);
+  color: #f6f6f6;
+  background-color: #383737;
 }
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
 }
 
 h1,
@@ -26,6 +30,10 @@ ol {
   margin: 0;
   padding: 0;
 }
+a {
+  color: currentColor;
+  text-decoration: none;
+}
 
 li {
   list-style: none;
@@ -34,4 +42,8 @@ li {
 img {
   display: block;
   max-width: 100%;
+}
+button {
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
