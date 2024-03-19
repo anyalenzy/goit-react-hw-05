@@ -5,14 +5,22 @@ import MovieItem from "../MovieItem/MovieItem";
 export default function MovieList({ movies }) {
   const location = useLocation();
   return (
-    <ul className={css.moviesContainer}>
-      {movies.map((movie) => (
-        <li key={movie.id} className={css.movieItem}>
-          <Link className={css.movieLink} to={`/movies/${movie.id}`} state={{ from: location }}>
-            <MovieItem movie={movie} />
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <>
+      {movies.length > 0 && (
+        <ul className={css.moviesContainer}>
+          {movies.map((movie) => (
+            <li key={movie.id} className={css.movieItem}>
+              <Link
+                className={css.movieLink}
+                to={"/movies/${movie.id}"}
+                state={{ from: location }}
+              >
+                <MovieItem movie={movie} />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
