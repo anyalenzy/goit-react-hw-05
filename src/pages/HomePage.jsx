@@ -6,7 +6,7 @@ import { fetchTrending } from "../services/tmdb-api";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
-  const [loader, setLoader] = useState(true);
+  const [loader, setLoader] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -14,10 +14,11 @@ export default function HomePage() {
       try {
         setError(null);
         setLoader(true);
+        setMovies([]);
         const res = await fetchTrending();
         setMovies(res);
       } catch (error) {
-        // setError(error.message);
+        setError(error.message);
       } finally {
         setLoader(false);
       }

@@ -1,6 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import css from "./NotFoundPage.module.css";
-import { BiArrowBack } from "react-icons/bi";
+import BackLink from "../../components/BackLink/BackLink";
 
 export default function NotFoundPage() {
   const location = useLocation();
@@ -12,11 +12,7 @@ export default function NotFoundPage() {
       <p className={css.notFoundText}>
         ...mayby the page you're looking for is not found or never existed.
       </p>
-      <Link to={backLink}>
-        <button className={css.notFoundBtn}>
-          <BiArrowBack /> Back to home
-        </button>
-      </Link>
+      <BackLink to={backLink}>Back to home</BackLink>
     </main>
   );
 }

@@ -19,6 +19,7 @@ export default function MoviesPage() {
       try {
         setError(null);
         setLoader(true);
+        setMovies([]);
         const res = await fetchMoviesByQuery(searchQuery);
         if (res.length === 0) {
           setError(
@@ -34,7 +35,6 @@ export default function MoviesPage() {
         setLoader(false);
       }
     };
-
     if (searchQuery !== "") {
       fetchMoviesBySearchQuery();
     }
