@@ -13,3 +13,6 @@
 .movieText {
   font-size: 15px;
 }
+.movieImg {
+  object-fit: cover;
+}

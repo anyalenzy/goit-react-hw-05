@@ -13,27 +13,27 @@ const options = {
 
 const fetchTrending = async () => {
   const response = await axios.get(
-    "trending/movie/day?language=en-US",
+    `trending/movie/day?language=en-US`,
     options
   );
   return response.data.results;
 };
 const fetchMoviesByQuery = async (query) => {
   const response = await axios.get(
-    "search/movie?include_adult=false&language=en-US&page=1&query=${query}",
+    `search/movie?include_adult=false&language=en-US&page=1&query=${query}`,
     options
   );
   return response.data.results;
 };
 
 const fetchMovieDetails = async (movieId) => {
-  const response = await axios.get("movie/${movieId}?language=en-US", options);
+  const response = await axios.get(`movie/${movieId}?language=en-US`, options);
   return response.data;
 };
 
 const fetchActors = async (movieId) => {
   const response = await axios.get(
-    "movie/${movieId}/credits?language=en-US",
+    `movie/${movieId}/credits?language=en-US`,
     options
   );
   return response.data.cast;

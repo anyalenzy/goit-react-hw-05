@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import MoviesPage from "./pages/MoviesPage";
-import HomePage from "./pages/HomePage";
-import MovieDetailsPage from "./pages/MovieDetailsPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import Navigation from "./components/Navigation/Navigation";
-import MovieCast from "./components/MovieCast/MovieCast";
-import MovieReviews from "./components/MovieReviews/MovieReviews";
+import MoviesPage from "../pages/MoviesPage";
+import HomePage from "../pages/HomePage";
+import MovieDetailsPage from "../pages/MovieDetailsPage";
+import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
+import Navigation from "./Navigation/Navigation";
+import MovieCast from "./MovieCast/MovieCast";
+import MovieReviews from "./MovieReviews/MovieReviews";
 
 function App() {
   return (

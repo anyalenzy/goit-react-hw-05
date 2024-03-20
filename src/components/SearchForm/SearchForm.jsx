@@ -6,7 +6,7 @@ export default function SearchForm({ onSearch }) {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const form = evt.target;
-    const query = form.elements.query.value;
+    const query = form.elements.query.value.trim();
 
     if (query.trim() === "") {
       toast.error("Please enter search term!", { position: "top right" });
