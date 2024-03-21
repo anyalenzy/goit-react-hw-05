@@ -1,4 +1,4 @@
-.movieDetContainer {
+.container {
   padding: 15px;
 }
 .movieContainer {
@@ -9,7 +9,6 @@
   gap: 20px;
 }
 .movieContainerUp img {
-  /* object-fit: cover; */
   border-radius: 5px;
   margin-bottom: 30px;
   height: 450px;

@@ -1,5 +1,5 @@
 .container {
-  padding: 15px 15px;
+  padding: 15px;
 }
 .notFoundTitle {
   font-size: 50px;
@@ -11,4 +11,3 @@
 .notFoundText {
   margin-bottom: 30px;
 }
-

@@ -1,10 +1,11 @@
-import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
-import Loader from "../components/Loader/Loader";
-import MovieList from "../components/MovieList/MovieList";
-import SearchForm from "../components/SearchForm/SearchForm";
-import { fetchMoviesByQuery } from "../services/tmdb-api";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import Loader from "../../components/Loader/Loader";
+import MovieList from "../../components/MovieList/MovieList";
+import SearchForm from "../../components/SearchForm/SearchForm";
+import { fetchMoviesByQuery } from "../../services/tmdb-api";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import css from "./MoviesPage.module.css";
 
 export default function MoviesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -46,11 +47,13 @@ export default function MoviesPage() {
   };
 
   return (
-    <main>
-      <SearchForm onSearch={handleSearchQuery} />
-      {loader && <Loader />}
-      {error && <ErrorMessage message={error} />}
-      <MovieList movies={movies} />
-    </main>
+    <section>
+      <div className={css.container}>
+        <SearchForm onSearch={handleSearchQuery} />
+        {loader && <Loader />}
+        {error && <ErrorMessage message={error} />}
+        <MovieList movies={movies} />
+      </div>
+    </section>
   );
 }

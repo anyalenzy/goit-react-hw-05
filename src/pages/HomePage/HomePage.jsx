@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import MovieList from "../components/MovieList/MovieList";
-import Loader from "../components/Loader/Loader";
-import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
-import { fetchTrending } from "../services/tmdb-api";
+import MovieList from "../../components/MovieList/MovieList";
+import Loader from "../../components/Loader/Loader";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import { fetchTrending } from "../../services/tmdb-api";
+import css from "./HomePage.module.css";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
@@ -26,11 +27,13 @@ export default function HomePage() {
     fetchTrendingMovies();
   }, []);
   return (
-    <main>
-      <h1>Trending today</h1>
-      {loader && <Loader />}
-      {error && <ErrorMessage message={error} />}
-      <MovieList movies={movies} />
-    </main>
+    <section>
+      <div className={css.container}>
+        <h1>Trending today</h1>
+        {loader && <Loader />}
+        {error && <ErrorMessage message={error} />}
+        <MovieList movies={movies} />
+      </div>
+    </section>
   );
 }
