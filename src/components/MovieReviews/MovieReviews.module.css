@@ -1,0 +1,13 @@
+.reviewsContainer {
+  margin-top: 20px;
+  text-align: left;
+}
+.reviewsItem {
+  margin-bottom: 15px;
+}
+.reviewsAuthor {
+  margin-bottom: 2px;
+}
+.reviewsText {
+  font-size: 14px;
+}

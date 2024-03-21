@@ -41,9 +41,10 @@ const fetchActors = async (movieId) => {
 
 const fetchReviews = async (movieId) => {
   const response = await axios.get(
-    "movie/${movieId}/reviews?language=en-US&page=1",
+    `movie/${movieId}/reviews?language=en-US&page=1`,
     options
   );
+  return response.data.results;
 };
 
 export {

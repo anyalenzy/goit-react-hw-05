@@ -1,0 +1,24 @@
+.actorsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 30px;
+}
+.actorsItem {
+  width: 200px;
+}
+.actorInfoContainer {
+  background-color: #3f4340;
+  padding: 3px;
+}
+.actorName {
+  font-weight: 700;
+}
+.actorCharacter {
+  font-size: 14px;
+}
+.actorCharacter span {
+  font-weight: 700;
+}
