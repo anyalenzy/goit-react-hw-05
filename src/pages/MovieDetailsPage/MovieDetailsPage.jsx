@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import BackLink from "../../components/BackLink/BackLink";
 import { fetchMovieDetails } from "../../services/tmdb-api";
 import defaultImg from "../../assets/img/image-not-found.png";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import css from "./MovieDetailsPage.module.css";
+import clsx from "clsx";
 import { format } from "date-fns";
+
+const buildLinkClass = ({ isActive }) => {
+  return clsx(css.link, isActive && css.active);
+};
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -92,14 +97,22 @@ export default function MovieDetailsPage() {
               <h3>Additional information</h3>
               <ul className={css.additInfoList}>
                 <li>
-                  <Link to="cast" state={{ from: backLinkHref }}>
+                  <NavLink
+                    to="cast"
+                    className={buildLinkClass}
+                    state={location.state}
+                  >
                     Cast
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="reviews" state={{ from: backLinkHref }}>
+                  <NavLink
+                    to="reviews"
+                    className={buildLinkClass}
+                    state={location.state}
+                  >
                     Reviews
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>
