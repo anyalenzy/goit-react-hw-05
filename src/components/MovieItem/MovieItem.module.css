@@ -14,5 +14,5 @@
   font-size: 15px;
 }
 .movieImg {
-  object-fit: cover;
+  /* object-fit: cover; */
 }

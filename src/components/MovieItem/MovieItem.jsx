@@ -1,5 +1,5 @@
 import css from "./MovieItem.module.css";
-import defaultImg from "../../assets/img/image-not-found-scaled-1150x647.png";
+import defaultImg from "../../assets/img/image-not-found.png";
 
 export default function MovieItem({
   movie: { poster_path, title, vote_average },
