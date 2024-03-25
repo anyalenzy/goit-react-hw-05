@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import BackLink from "../../components/BackLink/BackLink";
 import { fetchMovieDetails } from "../../services/tmdb-api";
@@ -116,7 +116,9 @@ export default function MovieDetailsPage() {
                 </li>
               </ul>
             </div>
-            <Outlet />
+            <Suspense fallback={<Loader />}>
+              <Outlet />
+            </Suspense>
           </div>
         )}
       </div>
